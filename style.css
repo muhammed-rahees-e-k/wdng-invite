@@ -46,6 +46,117 @@ html, body {
 }
 
 /* ==========================================================================
+   ANIMATED CREATIVE HEART PAGE TRANSITION LOADER
+   ========================================================================== */
+
+.page-transition-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, rgba(42, 52, 36, 0.96) 0%, rgba(16, 22, 14, 0.98) 100%);
+  backdrop-filter: blur(18px);
+  z-index: 4000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
+}
+
+.page-transition-loader.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.heart-loader-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Expanding Gold Heart Ripple Waves */
+.heart-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  border: 1.5px solid rgba(212, 175, 55, 0.5);
+  border-radius: 50%;
+  animation: heartRippleWave 2s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+  pointer-events: none;
+}
+
+.heart-ripple.wave-2 {
+  animation-delay: 0.9s;
+}
+
+/* Orbiting Starlight Ring */
+.heart-starlight-ring {
+  animation: heartStarlightRotate 3s linear infinite;
+  transform-origin: center;
+  filter: drop-shadow(0 0 6px rgba(251, 238, 169, 0.6));
+}
+
+/* Outer Pulsing Heart Outline */
+.heart-outline-pulse {
+  animation: heartPulseDouble 1.4s ease-in-out infinite;
+  transform-origin: center;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.7));
+}
+
+/* Main Glowing Beating Heart Core */
+.beating-heart-core {
+  animation: heartBeatCore 1.4s ease-in-out infinite;
+  transform-origin: center;
+  filter: drop-shadow(0 0 14px rgba(251, 238, 169, 0.9));
+}
+
+@keyframes heartBeatCore {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.18); }
+  30% { transform: scale(1.04); }
+  45% { transform: scale(1.22); }
+  65% { transform: scale(1); }
+}
+
+@keyframes heartPulseDouble {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  25% { transform: scale(1.12); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.85; }
+  75% { transform: scale(1.16); opacity: 1; }
+}
+
+@keyframes heartStarlightRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes heartRippleWave {
+  0% {
+    width: 60px;
+    height: 60px;
+    opacity: 0.8;
+    border-color: rgba(251, 238, 169, 0.8);
+  }
+  100% {
+    width: 170px;
+    height: 170px;
+    opacity: 0;
+    border-color: rgba(212, 175, 55, 0);
+  }
+}
+
+/* ==========================================================================
    STAGE 1: LUXURY VELVET COVER OVERLAY (EXACT DESIGN MATCH)
    ========================================================================== */
 
@@ -977,6 +1088,25 @@ body.mode-responsive .card-screen {
   margin-top: 35px;
   padding-top: 20px;
   border-top: 1px solid var(--border-olive);
+}
+
+.animating-heart-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 4px 15px rgba(212, 175, 55, 0.45));
+}
+
+.heart-orbit-spin {
+  animation: loaderSpinOuter 2s linear infinite;
+  transform-origin: center;
+}
+
+.beating-heart {
+  animation: heartPulse 1.5s ease-in-out infinite;
+  transform-origin: center;
+  filter: drop-shadow(0 0 10px rgba(251, 238, 169, 0.8));
 }
 
 .closing-subtitle {

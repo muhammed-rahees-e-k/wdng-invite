@@ -7,17 +7,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
 
   // ==========================================
-  // 1. MULTI-STAGE NAVIGATION FLOW
+  // 1. MULTI-STAGE NAVIGATION FLOW WITH VISUAL LOADER
   // ==========================================
   const btnTapOpen = document.getElementById('btnTapOpen');
   const btnEnterInvitation = document.getElementById('btnEnterInvitation');
+  const pageLoader = document.getElementById('pageLoader');
+
+  function triggerPageLoader(callback) {
+    if (pageLoader) {
+      pageLoader.classList.add('active');
+      setTimeout(() => {
+        if (callback) callback();
+        setTimeout(() => {
+          pageLoader.classList.remove('active');
+        }, 350);
+      }, 550);
+    } else {
+      if (callback) callback();
+    }
+  }
 
   // Stage 1 -> Stage 2 (Tap to Open -> Bismillah Page)
   if (btnTapOpen) {
     btnTapOpen.addEventListener('click', () => {
-      body.classList.remove('flow-cover');
-      body.classList.add('flow-bismillah');
       playOpeningTone();
+      triggerPageLoader(() => {
+        body.classList.remove('flow-cover');
+        body.classList.add('flow-bismillah');
+      });
     });
   }
 
@@ -41,13 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Stage 2 -> Stage 3 (Bismillah Page -> Main Invitation)
   if (btnEnterInvitation) {
     btnEnterInvitation.addEventListener('click', () => {
-      body.classList.remove('flow-bismillah');
-      body.classList.add('flow-invitation');
-      
-      // Auto-trigger scroll animations on entry
-      setTimeout(() => {
-        handleScrollAnimation();
-      }, 300);
+      triggerPageLoader(() => {
+        body.classList.remove('flow-bismillah');
+        body.classList.add('flow-invitation');
+        setTimeout(() => {
+          handleScrollAnimation();
+        }, 200);
+      });
     });
   }
 
