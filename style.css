@@ -1,0 +1,1296 @@
+/* ==========================================================================
+   Arshad & Athika - Luxury Matched Opening Wedding Invitation Stylesheet
+   ========================================================================== */
+
+:root {
+  --olive-green: #59664c;
+  --olive-dark: #3a4531;
+  --olive-light: #6e7e5e;
+  --linen-bg: #f7f5f0;
+  --linen-card: #fdfdfb;
+  --text-dark: #3a3a38;
+  --text-muted: #72746e;
+  --text-olive: #59664c;
+  --text-white: #ffffff;
+  --gold-accent: #d4af37;
+  --gold-light: #fbeea9;
+  --gold-dark: #aa851c;
+  --border-gold: rgba(212, 175, 55, 0.4);
+  --border-olive: rgba(89, 102, 76, 0.2);
+  --font-arabic: 'Amiri', serif;
+  --font-script: 'Great Vibes', 'Alex Brush', cursive;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Montserrat', sans-serif;
+  --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --shadow-soft: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #1e261a;
+  background-image: radial-gradient(#303a2a 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   STAGE 1: LUXURY VELVET COVER OVERLAY (EXACT DESIGN MATCH)
+   ========================================================================== */
+
+.cover-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1e261a;
+  background-image: radial-gradient(#303a2a 1px, transparent 1px);
+  background-size: 24px 24px;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s;
+}
+
+body.flow-cover .cover-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.flow-bismillah .cover-overlay,
+body.flow-invitation .cover-overlay {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(1.05);
+}
+
+/* LUXURY COVER CARD */
+.luxury-cover-card {
+  position: relative;
+  background: linear-gradient(160deg, #59664c 0%, #3a4531 100%);
+  backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(212, 175, 55, 0.5);
+  border-radius: 28px;
+  padding: 55px 32px 40px;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45), inset 0 0 35px rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  overflow: hidden;
+}
+
+
+
+/* ROYAL MONOGRAM */
+.royal-monogram-wrapper {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.monogram-svg {
+  filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.3));
+}
+
+/* TYPOGRAPHY */
+.luxury-sub-hdr {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 3.5px;
+  color: #d4af37;
+  margin-bottom: 22px;
+  opacity: 0.95;
+}
+
+.luxury-name {
+  font-family: var(--font-script);
+  font-size: 3.6rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+  text-transform: capitalize;
+}
+
+.name-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 10px 0;
+}
+
+.divider-line {
+  width: 45px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+}
+
+.and-script {
+  font-family: var(--font-script);
+  font-size: 1.8rem;
+  color: #fbeea9;
+  line-height: 1;
+}
+
+.luxury-invitation-tag {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #c0cbb8;
+  margin-top: 25px;
+  margin-bottom: 22px;
+  opacity: 0.9;
+}
+
+.luxury-date {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  letter-spacing: 4px;
+  color: #fbeea9;
+  margin-bottom: 35px;
+}
+
+.btn-capsule-gold {
+  position: relative;
+  background: linear-gradient(135deg, #fbeea9 0%, #d4af37 35%, #ffffff 50%, #d4af37 65%, #aa851c 100%);
+  background-size: 200% 200%;
+  color: #141208;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  padding: 12px 32px;
+  min-width: 190px;
+  max-width: 260px;
+  border-radius: 35px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(212, 175, 55, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: goldGlowShift 4s ease infinite, buttonPulseGlow 2.5s ease-in-out infinite;
+}
+
+.btn-capsule-gold:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.65);
+  background-position: right center;
+}
+
+.btn-capsule-gold:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+.btn-shimmer-sweep {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+  transform: skewX(-25deg);
+  animation: shimmerSweep 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* BOTTOM SCROLL INDICATOR PILL */
+.scroll-indicator-pill {
+  width: 18px;
+  height: 32px;
+  border: 1.5px solid rgba(212, 175, 55, 0.6);
+  border-radius: 12px;
+  margin: 30px auto 0;
+  position: relative;
+}
+
+.scroll-dot {
+  width: 4px;
+  height: 8px;
+  background: var(--gold-accent);
+  border-radius: 2px;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrollBounce 2s infinite ease-in-out;
+}
+
+/* ==========================================================================
+   STAGE 2: BISMILLAH PAGE SCREEN
+   ========================================================================== */
+
+.bismillah-page-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1e261a;
+  background-image: radial-gradient(#303a2a 1px, transparent 1px);
+  background-size: 24px 24px;
+  z-index: 1900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s;
+}
+
+body.flow-cover .bismillah-page-screen {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+body.flow-bismillah .bismillah-page-screen {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.flow-invitation .bismillah-page-screen {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(0.95);
+}
+
+.bismillah-card {
+  max-width: 480px;
+}
+
+.bismillah-header-badge {
+  margin-bottom: 15px;
+  animation: pulse 2.5s infinite;
+}
+
+.bismillah-arabic-title {
+  font-family: var(--font-arabic);
+  font-size: 2.7rem;
+  line-height: 1.4;
+  color: #fceecb;
+  text-shadow: 0 0 20px rgba(252, 238, 203, 0.4);
+  margin-bottom: 12px;
+}
+
+.bismillah-english-trans {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  color: #d8e2d2;
+  margin-bottom: 22px;
+}
+
+.bismillah-quran-verse {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.98rem;
+  color: #f1f3ed;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+
+.quran-ref {
+  display: block;
+  font-style: normal;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gold-accent);
+  margin-top: 10px;
+}
+
+/* Hide desktop navbar in cover or bismillah flow */
+body.flow-cover .desktop-controls,
+body.flow-bismillah .desktop-controls {
+  display: none !important;
+}
+
+/* Hide main wrapper in cover or bismillah flow */
+body.flow-cover .main-wrapper,
+body.flow-bismillah .main-wrapper {
+  display: none !important;
+}
+
+body.flow-invitation .desktop-controls,
+body.flow-invitation .main-wrapper {
+  display: flex;
+}
+
+/* ==========================================================================
+   DESKTOP CONTROL BAR
+   ========================================================================== */
+
+.desktop-controls {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(30, 33, 28, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e2e4dd;
+  padding: 10px 20px;
+}
+
+.desktop-controls-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.heart-icon {
+  color: #c89e67;
+  animation: pulse 2s infinite;
+}
+
+.view-mode-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.mode-label {
+  font-size: 0.78rem;
+  color: #aaa;
+  margin-left: 10px;
+  margin-right: 4px;
+}
+
+.mode-btn {
+  background: transparent;
+  border: none;
+  color: #ccc;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+
+.mode-btn:hover {
+  color: #fff;
+}
+
+.mode-btn.active {
+  background: var(--olive-green);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* ==========================================================================
+   LAYOUT CONTAINERS & TRIPTYCH VIEW
+   ========================================================================== */
+
+.main-wrapper {
+  padding: 30px 20px 60px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 60px);
+}
+
+/* TRIPTYCH MODE */
+body.mode-triptych .cards-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1350px;
+  width: 100%;
+}
+
+body.mode-triptych .card-screen {
+  width: 380px;
+  flex-shrink: 0;
+  background: var(--linen-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* PHONE MOCKUP MODE */
+body.mode-phone .cards-container {
+  width: 410px;
+  background: #111;
+  border: 12px solid #222;
+  border-radius: 46px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+body.mode-phone .card-screen {
+  width: 100%;
+  background: var(--linen-bg);
+}
+
+body.mode-phone .card-screen + .card-screen {
+  border-top: 1px dashed var(--border-olive);
+}
+
+/* RESPONSIVE FLUID MODE */
+body.mode-responsive .cards-container {
+  max-width: 600px;
+  width: 100%;
+  background: var(--linen-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+body.mode-responsive .card-screen {
+  width: 100%;
+}
+
+/* Mobile Screen Layout Adjustments */
+@media (max-width: 1100px) {
+  .desktop-controls {
+    display: none !important;
+  }
+  
+  .main-wrapper {
+    padding: 0;
+  }
+
+  .cards-container {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 0 auto;
+    background: var(--linen-bg);
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .card-screen {
+    width: 100% !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
+/* HERO SECTION */
+.envelope-hero {
+  background-color: var(--olive-green);
+  color: var(--text-white);
+  padding: 40px 20px 30px;
+  text-align: center;
+  position: relative;
+  background-image: linear-gradient(180deg, #647555 0%, #4f5b43 100%);
+  border-bottom: 2px solid rgba(255,255,255,0.1);
+  box-shadow: inset 0 -10px 20px rgba(0,0,0,0.1);
+}
+
+.envelope-top-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: rgba(0,0,0,0.08);
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+
+.couple-names {
+  font-family: var(--font-script);
+  font-size: 3.4rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  margin-top: 10px;
+  text-transform: capitalize;
+}
+
+.ampersand {
+  display: block;
+  font-size: 2.2rem;
+  margin: -5px 0;
+  opacity: 0.9;
+}
+
+.wedding-date-seal {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  color: #f1f3ed;
+  margin-top: 18px;
+  padding-top: 8px;
+}
+
+/* PHOTO & QUOTE SECTION */
+.photo-section {
+  padding: 25px 20px;
+  background: var(--linen-bg);
+  text-align: center;
+}
+
+.photo-frame {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border: 4px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.photo-frame:hover {
+  transform: scale(1.02);
+}
+
+.couple-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.romantic-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin-top: 18px;
+  padding: 0 10px;
+}
+
+/* OLIVE BLOCKS */
+.olive-block {
+  background-color: var(--olive-green);
+  color: var(--text-white);
+  padding: 35px 22px;
+  text-align: center;
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.blessing-text {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #f2f4ee;
+  margin-bottom: 25px;
+}
+
+/* DATE HEADER */
+.date-header {
+  border-top: 1px solid rgba(255,255,255,0.3);
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding: 12px 0;
+  margin-bottom: 25px;
+}
+
+.date-line-top {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  display: block;
+  margin-bottom: 4px;
+  opacity: 0.9;
+}
+
+.date-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.day-name, .year-number {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  opacity: 0.85;
+}
+
+.day-number {
+  font-family: var(--font-script);
+  font-size: 3rem;
+  line-height: 1;
+}
+
+/* COUNTDOWN TIMER */
+.countdown-section {
+  margin-bottom: 30px;
+}
+
+.countdown-label {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 2.5px;
+  opacity: 0.9;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.countdown-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-val {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.time-lbl {
+  font-size: 0.65rem;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+.time-sep {
+  font-size: 1.4rem;
+  opacity: 0.7;
+  margin-top: -12px;
+}
+
+/* CALENDAR WIDGET */
+.calendar-section {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  padding: 20px 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.calendar-title {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 2px;
+}
+
+.calendar-subtitle {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin-bottom: 15px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px 2px;
+  font-size: 0.75rem;
+}
+
+.day-hdr {
+  font-size: 0.65rem;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.cal-day {
+  padding: 6px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cal-day.highlighted-day {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.heart-outline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 34px;
+  height: 34px;
+  pointer-events: none;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+  animation: heartPulse 2.2s infinite ease-in-out;
+}
+
+/* SECTION 2 CONTENT */
+.event-card {
+  padding: 35px 20px;
+  text-align: center;
+  background: var(--linen-bg);
+  border-bottom: 1px solid var(--border-olive);
+}
+
+.event-icon {
+  color: var(--olive-green);
+  margin-bottom: 10px;
+}
+
+.script-heading {
+  font-family: var(--font-script);
+  font-size: 2.6rem;
+  font-weight: 400;
+  color: var(--text-dark);
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.event-time {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.event-venue {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-dark);
+}
+
+.event-city {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.btn-location {
+  position: relative;
+  background: linear-gradient(135deg, var(--olive-green) 0%, var(--olive-dark) 100%);
+  border: 1px solid var(--gold-accent);
+  color: #ffffff;
+  padding: 9px 24px;
+  border-radius: 22px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(89, 102, 76, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-location:hover {
+  background: linear-gradient(135deg, var(--olive-light) 0%, var(--olive-green) 100%);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 22px rgba(89, 102, 76, 0.5);
+  border-color: #fbeea9;
+}
+
+/* ITINERARIO */
+.itinerary-section {
+  padding: 35px 20px;
+  text-align: center;
+  background: var(--linen-bg);
+}
+
+.itinerary-title {
+  margin-bottom: 25px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 290px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 15px;
+  bottom: 15px;
+  width: 1px;
+  border-left: 2px dashed #cfd4c8;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.timeline-node {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid var(--olive-green);
+  color: var(--olive-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 6px;
+}
+
+.timeline-content {
+  background: var(--linen-card);
+  padding: 4px 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.timeline-time {
+  display: block;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.timeline-desc {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  color: var(--text-dark);
+}
+
+/* GIFT BLOCK */
+.gift-block {
+  border-top: 2px solid rgba(255,255,255,0.1);
+}
+
+.gift-icon {
+  margin-bottom: 8px;
+  opacity: 0.95;
+}
+
+.gift-title {
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+/* SECTION 3 */
+.recommendations-section {
+  padding: 35px 22px;
+  text-align: center;
+  background: var(--linen-bg);
+}
+
+.heart-bullet {
+  color: var(--olive-green);
+  margin-bottom: 12px;
+}
+
+.recommendations-title {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.recommendations-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.inline-map-box {
+  margin-top: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.closing-block {
+  margin-top: 35px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-olive);
+}
+
+.closing-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.closing-thanks {
+  font-size: 3rem;
+  color: var(--text-dark);
+}
+
+/* ==========================================================================
+   SCROLL REVEAL ANIMATIONS
+   ========================================================================== */
+
+.scroll-reveal {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.fade-up {
+  transform: translateY(40px);
+}
+
+.scroll-reveal.fade-down {
+  transform: translateY(-40px);
+}
+
+.scroll-reveal.zoom-in {
+  transform: scale(0.92);
+}
+
+.scroll-reveal.slide-right {
+  transform: translateX(-35px);
+}
+
+.scroll-reveal.slide-left {
+  transform: translateX(35px);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1) translateX(0);
+}
+
+/* ==========================================================================
+   MODAL WINDOWS
+   ========================================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 18, 14, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 20px;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-card {
+  background: var(--linen-card);
+  width: 100%;
+  max-width: 440px;
+  border-radius: 16px;
+  padding: 28px 24px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  border: 1px solid var(--border-olive);
+}
+
+.modal-backdrop.active .modal-card {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: #888;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--olive-green);
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.modal-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.map-embed-container {
+  margin-bottom: 18px;
+}
+
+.modal-actions {
+  text-align: center;
+}
+
+.btn-modal-action {
+  background: var(--olive-green);
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: background 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-modal-action:hover {
+  background: var(--olive-dark);
+}
+
+/* KEYFRAME ANIMATIONS */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translate(-50%, 0); opacity: 0.8; }
+  50% { transform: translate(-50%, 10px); opacity: 0.2; }
+}
+
+@keyframes heartPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.18); }
+}
+
+@keyframes goldGlowShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes buttonPulseGlow {
+  0%, 100% {
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4), 0 0 15px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    box-shadow: 0 12px 38px rgba(212, 175, 55, 0.7), 0 0 28px rgba(251, 238, 169, 0.6);
+  }
+}
+
+@keyframes shimmerSweep {
+  0% { left: -100%; opacity: 0; }
+  20% { opacity: 0.8; }
+  60% { left: 160%; opacity: 0.8; }
+  100% { left: 160%; opacity: 0; }
+}
+
+/* ==========================================================================
+   COMPREHENSIVE MOBILE RESPONSIVE STYLES (ALL DEVICES)
+   ========================================================================== */
+
+/* Standard Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .cover-overlay,
+  .bismillah-page-screen {
+    padding: 12px;
+    overflow-y: auto;
+    align-items: flex-start;
+  }
+
+  .luxury-cover-card {
+    padding: 35px 20px 30px;
+    margin: auto 0;
+    max-height: 94vh;
+    overflow-y: auto;
+  }
+
+  .royal-monogram-wrapper {
+    margin-bottom: 18px;
+  }
+
+  .monogram-svg {
+    width: 85px;
+    height: 85px;
+  }
+
+  .luxury-name {
+    font-size: 2.9rem;
+  }
+
+  .luxury-date {
+    font-size: 1rem;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+  }
+
+  .bismillah-arabic-title {
+    font-size: 2.1rem;
+  }
+
+  .bismillah-english-trans {
+    font-size: 0.85rem;
+  }
+
+  .bismillah-quran-verse {
+    font-size: 0.88rem;
+  }
+
+  .couple-names {
+    font-size: 2.7rem;
+  }
+
+  .envelope-hero {
+    padding: 32px 15px 24px;
+  }
+
+  .countdown-timer {
+    gap: 4px;
+  }
+
+  .time-val {
+    font-size: 1.5rem;
+  }
+
+  .btn-capsule-gold {
+    padding: 12px 28px;
+    font-size: 0.78rem;
+    min-width: 170px;
+  }
+
+  .modal-card {
+    padding: 24px 16px;
+    margin: 10px;
+  }
+}
+
+/* Short Vertical Mobile Viewports (max-height: 680px) */
+@media (max-height: 680px) {
+  .luxury-cover-card {
+    padding: 25px 18px 25px;
+  }
+
+  .royal-monogram-wrapper {
+    margin-bottom: 12px;
+  }
+
+  .luxury-sub-hdr {
+    margin-bottom: 14px;
+  }
+
+  .luxury-invitation-tag {
+    margin-top: 15px;
+    margin-bottom: 14px;
+  }
+
+  .luxury-date {
+    margin-bottom: 20px;
+  }
+
+  .scroll-indicator-pill {
+    margin-top: 15px;
+  }
+}
+
+/* Ultra Narrow Devices (max-width: 360px) */
+@media (max-width: 360px) {
+  .luxury-name {
+    font-size: 2.4rem;
+  }
+
+  .bismillah-arabic-title {
+    font-size: 1.8rem;
+  }
+
+  .couple-names {
+    font-size: 2.3rem;
+  }
+
+  .btn-capsule-gold {
+    width: 100%;
+    padding: 11px 20px;
+    font-size: 0.75rem;
+  }
+
+  .calendar-grid {
+    font-size: 0.7rem;
+    gap: 4px 1px;
+  }
+}
